@@ -8,20 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		EA7488531C2FA5CA007FA689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7488521C2FA5CA007FA689 /* AppDelegate.swift */; };
-		EA7488551C2FA5CA007FA689 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7488541C2FA5CA007FA689 /* ViewController.swift */; };
 		EA7488581C2FA5CA007FA689 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA7488561C2FA5CA007FA689 /* Main.storyboard */; };
 		EA74885A1C2FA5CA007FA689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7488591C2FA5CA007FA689 /* Assets.xcassets */; };
 		EA74885D1C2FA5CA007FA689 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74885B1C2FA5CA007FA689 /* LaunchScreen.storyboard */; };
+		EA7488651C2FAB9D007FA689 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7488641C2FAB9D007FA689 /* SongViewController.swift */; };
+		EA74886D1C2FC302007FA689 /* bananaLyrics.txt in Resources */ = {isa = PBXBuildFile; fileRef = EA74886C1C2FC302007FA689 /* bananaLyrics.txt */; };
+		EA7488711C2FCABE007FA689 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EA7488701C2FCABE007FA689 /* .gitignore */; };
+		EA7488761C2FD1E8007FA689 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7488751C2FD1E7007FA689 /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA74884F1C2FA5CA007FA689 /* Silly Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7488521C2FA5CA007FA689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA7488541C2FA5CA007FA689 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA7488571C2FA5CA007FA689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA7488591C2FA5CA007FA689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA74885C1C2FA5CA007FA689 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA74885E1C2FA5CA007FA689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7488641C2FAB9D007FA689 /* SongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
+		EA74886C1C2FC302007FA689 /* bananaLyrics.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bananaLyrics.txt; sourceTree = "<group>"; };
+		EA7488701C2FCABE007FA689 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EA7488721C2FCAF2007FA689 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EA7488751C2FD1E7007FA689 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +45,8 @@
 		EA7488461C2FA5CA007FA689 = {
 			isa = PBXGroup;
 			children = (
+				EA7488721C2FCAF2007FA689 /* README.md */,
+				EA7488701C2FCABE007FA689 /* .gitignore */,
 				EA7488511C2FA5CA007FA689 /* Silly Song */,
 				EA7488501C2FA5CA007FA689 /* Products */,
 			);
@@ -54,14 +63,56 @@
 		EA7488511C2FA5CA007FA689 /* Silly Song */ = {
 			isa = PBXGroup;
 			children = (
-				EA7488521C2FA5CA007FA689 /* AppDelegate.swift */,
-				EA7488541C2FA5CA007FA689 /* ViewController.swift */,
-				EA7488561C2FA5CA007FA689 /* Main.storyboard */,
-				EA7488591C2FA5CA007FA689 /* Assets.xcassets */,
-				EA74885B1C2FA5CA007FA689 /* LaunchScreen.storyboard */,
-				EA74885E1C2FA5CA007FA689 /* Info.plist */,
+				EA7488741C2FD16D007FA689 /* Support */,
+				EA7488661C2FABA5007FA689 /* Model */,
+				EA7488671C2FABBA007FA689 /* View */,
+				EA7488681C2FABC1007FA689 /* Controller */,
+				EA7488691C2FAC12007FA689 /* Support */,
 			);
 			path = "Silly Song";
+			sourceTree = "<group>";
+		};
+		EA7488661C2FABA5007FA689 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA7488521C2FA5CA007FA689 /* AppDelegate.swift */,
+				EA74886C1C2FC302007FA689 /* bananaLyrics.txt */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EA7488671C2FABBA007FA689 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA7488561C2FA5CA007FA689 /* Main.storyboard */,
+				EA74885B1C2FA5CA007FA689 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EA7488681C2FABC1007FA689 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA7488641C2FAB9D007FA689 /* SongViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EA7488691C2FAC12007FA689 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EA7488591C2FA5CA007FA689 /* Assets.xcassets */,
+				EA74885E1C2FA5CA007FA689 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		EA7488741C2FD16D007FA689 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EA7488751C2FD1E7007FA689 /* Global.swift */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +173,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7488711C2FCABE007FA689 /* .gitignore in Resources */,
 				EA74885D1C2FA5CA007FA689 /* LaunchScreen.storyboard in Resources */,
 				EA74885A1C2FA5CA007FA689 /* Assets.xcassets in Resources */,
 				EA7488581C2FA5CA007FA689 /* Main.storyboard in Resources */,
+				EA74886D1C2FC302007FA689 /* bananaLyrics.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA7488551C2FA5CA007FA689 /* ViewController.swift in Sources */,
 				EA7488531C2FA5CA007FA689 /* AppDelegate.swift in Sources */,
+				EA7488651C2FAB9D007FA689 /* SongViewController.swift in Sources */,
+				EA7488761C2FD1E8007FA689 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +340,7 @@
 				EA7488631C2FA5CA007FA689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
