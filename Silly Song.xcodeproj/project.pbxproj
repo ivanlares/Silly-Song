@@ -75,7 +75,6 @@
 		EA7488661C2FABA5007FA689 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EA7488521C2FA5CA007FA689 /* AppDelegate.swift */,
 				EA74886C1C2FC302007FA689 /* bananaLyrics.txt */,
 			);
 			name = Model;
@@ -101,6 +100,7 @@
 		EA7488691C2FAC12007FA689 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				EA7488521C2FA5CA007FA689 /* AppDelegate.swift */,
 				EA7488591C2FA5CA007FA689 /* Assets.xcassets */,
 				EA74885E1C2FA5CA007FA689 /* Info.plist */,
 			);

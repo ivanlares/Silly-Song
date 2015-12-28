@@ -32,7 +32,8 @@ class SongViewController: UIViewController{
   // MARK: - Lyrics
   
   func shortNameFromName(name: String) -> String {
-    let lowercaseName = name.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale.currentLocale())
+    
+    let lowercaseName = name.lowercaseString.stringByFoldingWithOptions(.DiacriticInsensitiveSearch, locale: NSLocale.currentLocale()).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     let vowelSet = NSCharacterSet(charactersInString: "aeiouy")
     
     // Get Range of first vowel
@@ -45,7 +46,8 @@ class SongViewController: UIViewController{
     return lowercaseName
   }
   
-  func lyricsForName(lyricsTemplate: String, fullName: String) -> String {
+  func lyricsForName(lyricsTemplate: String, var fullName: String) -> String {
+    fullName = fullName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     var customLyrics = lyricsTemplate as NSString
     customLyrics = customLyrics.stringByReplacingOccurrencesOfString(Global.FULL_NAME_TEMP, withString: fullName)
     customLyrics = customLyrics.stringByReplacingOccurrencesOfString(Global.SHORT_NAME_TEMP, withString: shortNameFromName(fullName))
@@ -53,27 +55,39 @@ class SongViewController: UIViewController{
     return customLyrics as String
   }
   
+  // MARK: UserInterface 
+  
+  func resetLyrics(){
+    textField.text = nil
+    textView.text = nil
+  }
+  
+  func displayLyrics(var name: String){
+    guard !name.isEmpty else {return}
+    name = name.capitalizedString
+    textField.text = name
+    textView.text = lyricsForName(Global.bananaTemplate, fullName: name)
+  }
+  
   // MARK: - Dictation 
   
   func dictate(text: String?) {
-    if let text = text {
+    if let text = text{
       let utterance = AVSpeechUtterance(string: text)
       utterance.voice = AVSpeechSynthesisVoice(identifier: "en-US")
-
       synthesizer.speakUtterance(utterance)
-      
     }
   }
   
   // MARK: - Target Action
   
   @IBAction func soundButtonWasTouched(sender: UIButton) {
-    if sender.selected{
+    if sender.selected{ // Dictation On
       sender.selected = false
       if !synthesizer.speaking{
         dictate(textView.text)
       }
-    } else {
+    } else { // Dictation Off
       sender.selected = true
       synthesizer.stopSpeakingAtBoundary(.Word)
     }
@@ -84,22 +98,19 @@ class SongViewController: UIViewController{
 extension SongViewController: UITextFieldDelegate {
   
   func textFieldDidBeginEditing(textField: UITextField) {
-    textField.text = nil
-    textView.text = nil
+    resetLyrics()
   }
   
   func textFieldDidEndEditing(textField: UITextField) {
     if let name = textField.text{
-      guard !name.isEmpty else {return}
-      textField.text = textField.text?.capitalizedString
-      textView.text = lyricsForName(Global.bananaTemplate, fullName: name)
-      dictate(textView.text)
+      displayLyrics(name)
+      if !soundButton.selected{dictate(textView.text)}
     }
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()
-    return true
+    return false
   }
   
 }

@@ -24,11 +24,11 @@
                                 <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKn-3s-2Jd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKn-3s-2Jd">
                                 <rect key="frame" x="20" y="132" width="502" height="30"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yob-oi-9a7">
                                 <rect key="frame" x="539" y="130" width="32" height="32"/>
@@ -41,7 +41,7 @@
                                     <action selector="soundButtonWasTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xIp-7S-bFA"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-Po-O3I">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-Po-O3I">
                                 <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -50,6 +50,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QMr-Po-O3I" secondAttribute="bottom" id="AtA-qX-UcK"/>
+                            <constraint firstItem="yob-oi-9a7" firstAttribute="top" secondItem="cIi-vL-JrQ" secondAttribute="bottom" constant="6" id="Fen-9R-GWt"/>
                             <constraint firstItem="QMr-Po-O3I" firstAttribute="top" secondItem="xKn-3s-2Jd" secondAttribute="bottom" constant="8" id="NiQ-YJ-Mc1"/>
                             <constraint firstItem="cIi-vL-JrQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="P5B-Q1-VcY"/>
                             <constraint firstItem="xKn-3s-2Jd" firstAttribute="top" secondItem="cIi-vL-JrQ" secondAttribute="bottom" constant="8" id="Tle-0N-oYp"/>
